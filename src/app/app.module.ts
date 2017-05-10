@@ -8,9 +8,12 @@ import {RouterModule} from  '@angular/router';
 import {PushNotifyModule} from './PushNotify/pushnotify.module'
 import {routeing} from './app.route';
 import {HomeComponent} from './home.component'
+import {AuthGuard} from './AuthGuard/AuthGuard'
+import {LoginComponent} from './Login.component'
+import {LoginService} from './services/Login.service'
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent
+    AppComponent,HomeComponent,LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import {HomeComponent} from './home.component'
     UIModule,
     PushNotifyModule
   ],
-  providers: [],
+  providers: [AuthGuard,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

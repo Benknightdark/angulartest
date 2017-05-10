@@ -7,7 +7,7 @@ import { pushnotifyRouting } from './pushnotify.route';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms.component';
 import { UserService } from '../services/getusers.service';
-
+import {AuthGuard} from '../AuthGuard/AuthGuard'
 @NgModule({
     imports: [
         CommonModule,
@@ -22,7 +22,7 @@ import { UserService } from '../services/getusers.service';
     exports: [
         PushNotifyComponent, FormsComponent
     ],
-    providers: [UserService]
+    providers: [UserService,AuthGuard]
 })
 export class PushNotifyModule {
 
