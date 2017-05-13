@@ -16,7 +16,7 @@ export class LoginComponent {
   login() {
     let  data:LoginModel={Username:"ben",Password:"1"};
 
-     console.log(data)
+
     this.loginservice.login(data)
             .subscribe(result => {
                 if (result === true) {
