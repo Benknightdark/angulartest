@@ -41,7 +41,6 @@ export class FormsComponent {
       console.log(this.notify)
         this._userService.PushNotifySingleDevice(this.notify
         ).subscribe(res => {
-
             this.PushStatus= res.statusText
             this.ButtonText = "Submit"
             this.ButtonCallBack = ""
