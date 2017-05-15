@@ -17,16 +17,17 @@ export class PushNotifyComponent {
 
     }
     onChange(data) {
-        if (data.uid == '') {
+
+        if (data.uid.value == '') {
             this.showForm = false;
 
         } else {
-            this._userService.CheckDeviceExists(data.uid).subscribe(res => {
+            this._userService.CheckDeviceExists(data.uid.value).subscribe(res => {
                 this.showForm = res
                 if (!this.showForm)
                     confirm("No Device Data")
             })
-            this.SelectedUser = data.uid;
+            this.SelectedUser =data.uid.value// data.uid.options[data.uid.options.selectedIndex].text;
         }
     }
     number3=0

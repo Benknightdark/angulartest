@@ -4,14 +4,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   template: `
 
     <div>
-    <pre>
+
 
               <h2>ToggleComponent</h2>
                 <div (click)="toggle()">Toggle</div>
                   <div [hidden]="!visible">
                     ngngng
                   </div>
-                </pre>
+
     </div>
     `
 })

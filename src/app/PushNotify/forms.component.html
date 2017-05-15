@@ -1,36 +1,23 @@
-<div class="col-md-6"  >
-
-
-      <pre>
-        <label >FormsComponent</label>
-       <!-- Count: {{ count }} - -->
-        <button class="btn btn-primary" (click)="increment()">+1</button>
-      </pre>
-
-
+<div class="col-md-6">
+  <h2>訊息接收者：{{SelectedUser}}</h2>
   <form (ngSubmit)="onSubmit()" [formGroup]="form" #f="ngForm">
     <div class="form-group">
       <label for="title">title</label>
-      <input type="text"
-      class="form-control"
-       formControlName="title"
-
-      >
+      <input type="text" class="form-control" formControlName="title">
     </div>
     <div class="form-group">
       <label for="body">body</label>
-      <input type="text"
-      class="form-control"
-       formControlName="body"
-
-      >
+      <input type="text" class="form-control" formControlName="body">
     </div>
     <button type="submit" class="btn btn-primary" [disabled]='!form.valid' [ngClass]="{disabled:ButtonCallBack}">{{ButtonText}}</button>
     <p>{{PushStatus}}</p>
   </form>
-
 </div>
-
+<!--<div class="col-md-6">
+        <label >FormsComponent</label>
+        Count: {{ count }} -
+        <button class="btn btn-primary" (click)="increment()">+1</button>
+</div>-->
 <!--Model driven設定
 
 

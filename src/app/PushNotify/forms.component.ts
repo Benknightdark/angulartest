@@ -33,12 +33,19 @@ export class FormsComponent {
         this.ButtonCallBack = "disabled";
         this.form.value.uid = this.SelectedUser
         this.PushStatus="";
-        this.notify={uid:this.SelectedUser,title:this.form.value.ttile,body:this.form.value.body}
-        // console.log(this.form.value)
+        this.notify={uid:this.SelectedUser,
+          title:this.form.value.title
+          ,body:this.form.value.body}
+
+      console.log(this.notify)
         this._userService.PushNotifySingleDevice(this.notify
         ).subscribe(res => {
 
             this.PushStatus= res.statusText
+            this.ButtonText = "Submit"
+            this.ButtonCallBack = ""
+        },(error:any)=>{
+           this.PushStatus= error.statusText
             this.ButtonText = "Submit"
             this.ButtonCallBack = ""
         }
