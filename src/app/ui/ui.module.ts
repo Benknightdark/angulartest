@@ -4,9 +4,10 @@ import {NavComponent} from './navbar.component';
 import {RouterModule} from '@angular/router';
 import {HttpModule} from '@angular/http';
 import {LoginService} from '../services/Login.service'
+import {LoadingComponent} from './loading.component'
 @NgModule({
   declarations: [
-    NavComponent,
+    NavComponent,LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -14,6 +15,6 @@ import {LoginService} from '../services/Login.service'
     HttpModule
   ],
   providers: [LoginService],
-  exports: [NavComponent],
+  exports: [NavComponent,LoadingComponent],
 })
 export class UIModule { }
