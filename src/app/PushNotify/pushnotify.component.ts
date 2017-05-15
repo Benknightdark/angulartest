@@ -14,6 +14,7 @@ export class PushNotifyComponent {
     ngOnInit() {
         this.showForm = false;
         this.Users = this._userService.getUsers()
+
     }
     onChange(data) {
         if (data.uid == '') {

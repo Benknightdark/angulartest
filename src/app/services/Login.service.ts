@@ -7,7 +7,10 @@ import 'rxjs/add/operator/map'
 export class LoginService {
   public token: string;
   private _url = "http://192.168.137.1:88";
-  JSONoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json;charset=utf-8' }) });
+  JSONoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json;charset=utf-8'}) });
+
+ headers =new Headers();
+
   constructor(private http: Http) {
     // set token if saved in local storage
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -35,6 +38,12 @@ export class LoginService {
           return false;
         }
       });
+  }
+  ///測試jwt登入
+  TestService(){
+  this.headers.append('Authorization', 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).token);
+ return this.http.get("http://192.168.137.1:88/api/token",{"headers": this.headers}).map(res=>res.json());
+
   }
 
   logout(): void {

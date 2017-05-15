@@ -21,6 +21,7 @@ export class LoginComponent {
             .subscribe(result => {
                 if (result === true) {
                     // login successful
+                    this.loginservice.TestService().subscribe(r=>console.log(r));
                     this.router.navigate(['/']);
                 } else {
 
