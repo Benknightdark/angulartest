@@ -32,5 +32,9 @@ export class PushNotifyComponent {
       onCountChanged(value) {
         this.number3 = value;
   }
-
+  isOpen="open"
+  onToggled(value){
+    console.log(value)
+    this.isOpen=value;
+  }
 }

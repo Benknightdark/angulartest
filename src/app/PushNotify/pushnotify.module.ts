@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms.component';
 import { UserService } from '../services/getusers.service';
 import {AuthGuard} from '../AuthGuard/AuthGuard'
+import {ToggleClass} from './toggle'
 @NgModule({
     imports: [
         CommonModule,
@@ -17,10 +18,10 @@ import {AuthGuard} from '../AuthGuard/AuthGuard'
         pushnotifyRouting
     ],
     declarations: [
-        PushNotifyComponent, FormsComponent
+        PushNotifyComponent, FormsComponent,ToggleClass
     ],
     exports: [
-        PushNotifyComponent, FormsComponent
+        PushNotifyComponent, FormsComponent,ToggleClass
     ],
     providers: [UserService,AuthGuard]
 })

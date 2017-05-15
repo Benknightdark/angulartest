@@ -45,10 +45,8 @@ export class FormsComponent {
         )
 
     }
-
     @Input() count: number;
     @Output() countChange = new EventEmitter();
-    aa;
     increment() {
         this.count++;
         this.countChange.emit(this.count

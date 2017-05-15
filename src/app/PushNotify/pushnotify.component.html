@@ -10,7 +10,10 @@
         </select>
   </div>
   <div *ngIf=showForm>
+    {{number3}}
     <forms [SelectedUser]="SelectedUser"  [count]="number3" (countChange)="onCountChanged($event)"></forms>
   </div>
 
+{{isOpen}}
+<zippy (isToggled)="onToggled($event)"></zippy>
 </div>

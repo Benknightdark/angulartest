@@ -1,11 +1,11 @@
 <div class="col-md-6"  >
 
 
-      <p>
-        <ng-content></ng-content>
-        Count: {{ count }} -
-        <button (click)="increment()">+1</button>
-      </p>
+      <pre>
+        <label >FormsComponent</label>
+       <!-- Count: {{ count }} - -->
+        <button class="btn btn-primary" (click)="increment()">+1</button>
+      </pre>
 
 
   <form (ngSubmit)="onSubmit()" [formGroup]="form" #f="ngForm">
