@@ -27,7 +27,7 @@ export class UserService {
 		return this._http.post(this._url + "CheckDeviceExists", JSON.stringify(uid), this.JSONoptions)
 		.debounceTime(400).map(res => res.json())
 	}
-	PushNotifySingleDevice(notify:notify[]){
+	PushNotifySingleDevice(notify:notify){
 		return this._http.post(this._url + "SendMessage", JSON.stringify(notify), this.JSONoptions)
 		.debounceTime(400)//.map(res=>res.json());
 	}
