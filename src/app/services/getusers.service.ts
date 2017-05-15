@@ -1,13 +1,14 @@
 import { Injectable} from '@angular/core';
 import { Http,RequestOptions, Headers  } from '@angular/http';
 import {notify} from '../PushNotify/notify';
-import { Observable } from 'rxjs/Observable'
+import { Observable ,Subject} from 'rxjs'
 import {users} from '../PushNotify/users'
-import 'rxjs/add/operator/map';
+/*import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise'
 import 'rxjs/add/observable/range'
 import 'rxjs/add/observable/forkJoin';
-import 'rxjs/add/operator/debounceTime'
+import 'rxjs/add/operator/debounceTime'*/
+import 'rxjs'
 @Injectable()
 export class UserService {
 	private _url = "http://192.168.137.1/apiPush/";
@@ -17,9 +18,10 @@ export class UserService {
 	constructor(private _http: Http) {
 	}
 	getUsers():Observable<users> {
-
-		return this._http.get(this._url + "GetUsers")
-			.map(res => res.json());
+    let  sub=new Subject();
+		 this._http.get(this._url + "GetUsers")
+			.map(res => res.json()).subscribe(sub)
+      return sub;
 	}
 	CheckDeviceExists(uid){
 		return this._http.post(this._url + "CheckDeviceExists", JSON.stringify(uid), this.JSONoptions)

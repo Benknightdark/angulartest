@@ -1,15 +1,16 @@
 <h1>NotifyPush</h1>
 <div class="row">
   <div class="col-md-6">
+    <pre>目前{{(Users|async)?.length}}位使用者註冊app</pre>
     <select class="form-control" (change)="onChange({ uid: u.value })" #u>
             <option value="">select user</option>
             <option *ngFor="let user of Users | async" value="{{ user.ID }}">
                 {{ user.UserName }}
-            </option>        
+            </option>
         </select>
   </div>
   <div *ngIf=showForm>
     <forms [SelectedUser]="SelectedUser"  [count]="number3" (countChange)="onCountChanged($event)"></forms>
   </div>
-  
+
 </div>
