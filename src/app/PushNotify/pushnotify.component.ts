@@ -10,6 +10,7 @@ export class PushNotifyComponent {
     showForm: any
     Users: Observable<users>;
     SelectedUser: string
+    SelectedUserName:string
     constructor(private _userService: UserService) { }
     ngOnInit() {
         this.showForm = false;
@@ -27,7 +28,8 @@ export class PushNotifyComponent {
                 if (!this.showForm)
                     confirm("No Device Data")
             })
-            this.SelectedUser =data.uid.value// data.uid.options[data.uid.options.selectedIndex].text;
+            this.SelectedUser =data.uid.value
+            this.SelectedUserName= data.uid.options[data.uid.options.selectedIndex].text;
         }
     }
     number3=0

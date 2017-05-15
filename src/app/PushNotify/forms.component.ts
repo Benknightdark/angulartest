@@ -9,6 +9,7 @@ import { notify } from './notify'
 })
 export class FormsComponent {
     @Input() SelectedUser;
+    @Input() SelectedUserName;
     form: FormGroup;
     notify: notify;
     ButtonCallBack: string = "";;
