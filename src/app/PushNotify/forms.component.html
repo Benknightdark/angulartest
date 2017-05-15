@@ -14,6 +14,7 @@
       <input type="text"
       class="form-control"
        formControlName="title"
+
       >
     </div>
     <div class="form-group">
@@ -21,6 +22,7 @@
       <input type="text"
       class="form-control"
        formControlName="body"
+
       >
     </div>
     <button type="submit" class="btn btn-primary" [disabled]='!form.valid' [ngClass]="{disabled:ButtonCallBack}">{{ButtonText}}</button>
@@ -28,3 +30,13 @@
   </form>
 
 </div>
+
+<!--Model driven設定
+
+
+   [(ngModel)]="notify.title"
+        ngControl="title"
+
+  [(ngModel)]="notify.body"
+        ngControl="body"
+-->
