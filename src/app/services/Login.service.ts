@@ -7,9 +7,8 @@ import 'rxjs/add/operator/map'
 export class LoginService {
   public token: string;
   private _url = "http://192.168.137.1:88";
+  LoginHeaders =new Headers();
   JSONoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json;charset=utf-8'}) });
-
- headers =new Headers();
 
   constructor(private http: Http) {
     // set token if saved in local storage
@@ -41,8 +40,8 @@ export class LoginService {
   }
   ///測試jwt登入
   TestService(){
-  this.headers.append('Authorization', 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).token);
- return this.http.get("http://192.168.137.1:88/api/token",{"headers": this.headers}).map(res=>res.json());
+  this.LoginHeaders.append('Authorization', 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).token);
+ return this.http.get("http://192.168.137.1:88/api/token",{"headers": this.LoginHeaders}).map(res=>res.json());
 
   }
 
