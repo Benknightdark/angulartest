@@ -15,7 +15,6 @@ export class PushNotifyComponent {
   ngOnInit() {
     this.showForm = false;
     this.Users = this._userService.getUsers()
-
   }
   onChange(data) {
 
@@ -24,7 +23,7 @@ export class PushNotifyComponent {
 
     } else {
       this._userService.CheckDeviceExists(data.uid.value).subscribe(res => {
-      this.showForm = res;
+        this.showForm = res;
 
         console.log(this.showForm)
         if (this.showForm) {
@@ -33,11 +32,7 @@ export class PushNotifyComponent {
         } else {
           confirm("No Device Data");
         }
-
-
       });
-
-
     }
   }
   number3 = 0
