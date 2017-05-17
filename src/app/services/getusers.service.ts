@@ -31,5 +31,4 @@ export class UserService {
 		return this._http.post(this._url , JSON.stringify(notify), this.JSONoptions)
 		.debounceTime(400)//.map(res=>res.json());
 	}
-
 }
