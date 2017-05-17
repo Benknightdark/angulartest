@@ -41,7 +41,7 @@ export class FormsComponent {
     }
 
     console.log(this.notify)
-    this._userService.PushNotifySingleDevice(this.notify
+    this._userService.PushNotifyToDevice(this.notify
     ).subscribe(
       res => { this.PushStatus = res.statusText },
 

@@ -19,7 +19,7 @@ export class UserService {
 	}
 	getUsers():Observable<users> {
     let  sub=new Subject();
-		 this._http.get(this._url2 + "GetUsers")
+		 this._http.get(this._url2   )
 			.map(res => res.json()).subscribe(sub)
       return sub;
 	}
@@ -27,8 +27,8 @@ export class UserService {
 		return this._http.post(this._url2 + "CheckDeviceExists", JSON.stringify(uid), this.JSONoptions)
 		.debounceTime(400).map(res => res.json())
 	}
-	PushNotifySingleDevice(notify:notify){
-		return this._http.post(this._url + "SendMessage", JSON.stringify(notify), this.JSONoptions)
+	PushNotifyToDevice(notify:notify){
+		return this._http.post(this._url , JSON.stringify(notify), this.JSONoptions)
 		.debounceTime(400)//.map(res=>res.json());
 	}
 

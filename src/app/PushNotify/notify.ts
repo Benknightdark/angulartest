@@ -1,5 +1,5 @@
 export interface notify{
-    uid:string,
+    uid:string[],
     title:string,
     body:string
 }
