@@ -12,19 +12,19 @@ import 'rxjs'
 @Injectable()
 export class UserService {
 	private _url = "http://192.168.137.1/apiPush/";
-
+  private _url2="http://192.168.137.1/apiAppUser/";
 	JSONoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json;charset=utf-8' }) });
 	UrlEncodedoptions=new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' }) });
 	constructor(private _http: Http) {
 	}
 	getUsers():Observable<users> {
     let  sub=new Subject();
-		 this._http.get(this._url + "GetUsers")
+		 this._http.get(this._url2 + "GetUsers")
 			.map(res => res.json()).subscribe(sub)
       return sub;
 	}
 	CheckDeviceExists(uid):Observable<boolean>{
-		return this._http.post(this._url + "CheckDeviceExists", JSON.stringify(uid), this.JSONoptions)
+		return this._http.post(this._url2 + "CheckDeviceExists", JSON.stringify(uid), this.JSONoptions)
 		.debounceTime(400).map(res => res.json())
 	}
 	PushNotifySingleDevice(notify:notify){

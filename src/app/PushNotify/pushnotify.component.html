@@ -1,19 +1,19 @@
 <h1>NotifyPush</h1>
 <div class="row">
   <div class="col-md-6">
-    <pre>目前{{(Users|async)?.length}}位使用者註冊app</pre>
+    <pre>目前有{{(Users|async)?.length}}使用者</pre>
     <select class="form-control" (change)="onChange({ uid: u })" #u>
             <option value="">select user</option>
-            <option *ngFor="let user of Users | async" value="{{ user.ID }}">
-                {{ user.UserName }}
+            <option *ngFor="let user of Users | async" value="{{ user?.ID }}">
+                {{ user?.UserName }}
             </option>
         </select>
   </div>
 
   <div class="col-md-6">
 
-    ToggleStatus：{{isOpen}}
-    <zippy (isToggled)="onToggled($event)"></zippy>
+    ToggleStatus：{{visible}}
+    <zippy [visible]="visible" (isToggled)="onToggled($event)"></zippy>
   </div>
 
 

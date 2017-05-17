@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
               <h2>ToggleComponent</h2>
                 <div (click)="toggle()">Toggle</div>
-                  <div [hidden]="!visible">
+                  <div *ngIf="visible">
                     ngngng
                   </div>
 
@@ -17,17 +17,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ToggleClass {
 
-  visible: boolean = true;
+  @Input() visible: boolean
   @Output() isToggled = new EventEmitter();
 
   toggle() {
-    this.visible = !this.visible;
-    if (this.visible) {
-
-      this.isToggled.emit("open")
-    } else {
-
-      this.isToggled.emit("close")
-    }
+    this.isToggled.emit(!this.visible)
   }
 }

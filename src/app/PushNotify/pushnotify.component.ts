@@ -39,9 +39,13 @@ export class PushNotifyComponent {
   onCountChanged(value) {
     this.number3 = value;
   }
-  isOpen = "open"
+  visible:boolean=true;
   onToggled(value) {
-    console.log(value)
-    this.isOpen = value;
+    if (value){
+      confirm("開啟")
+    }else{
+      confirm("收合")
+    }
+    this.visible=value;
   }
 }
