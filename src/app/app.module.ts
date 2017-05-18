@@ -11,6 +11,7 @@ import {HomeComponent} from './home.component'
 import {AuthGuard} from './AuthGuard/AuthGuard'
 import {LoginComponent} from './Login.component'
 import {LoginService} from './services/Login.service'
+import { TestservicesService } from "./services/testservices.service";
 @NgModule({
   declarations: [
     AppComponent,HomeComponent,LoginComponent
@@ -24,7 +25,8 @@ import {LoginService} from './services/Login.service'
     UIModule,
     PushNotifyModule
   ],
-  providers: [AuthGuard,LoginService],
+  providers: [AuthGuard,LoginService,TestservicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

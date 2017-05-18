@@ -1,6 +1,8 @@
 <div *ngIf="showUI">
   <navbar></navbar>
 </div>
+<!-->{{(userdata|async)|json}}</!-->
+{{userdata|json}}
 <div class="container">
   <router-outlet></router-outlet>
 </div>

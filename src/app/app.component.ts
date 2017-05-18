@@ -7,6 +7,7 @@ import 'rxjs/add/observable/range'
 import 'rxjs/add/observable/forkJoin';
 import 'rxjs/add/operator/debounceTime'
 import { Router } from '@angular/router';
+import { TestservicesService } from "./services/testservices.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,18 +16,23 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'app works!';
   url: string;
-  showUI: boolean
-  constructor(private router: Router) {
+  showUI: boolean;
+  userdata//:Observable<any>;
+  constructor(private router: Router, private test:TestservicesService) {
     this.router.events.pairwise().subscribe((event: any) => {
-      // console.log(event);
-      // console.log(event.length)
-      //console.log (event[event.length-1].url)
       if (event[event.length - 1].url == "/login") {
         this.showUI = false;
       } else {
         this.showUI = true;
       }
-
     });
+  }
+  ngOnInit() {
+  //this.userdata=this.test.GetUsers();//.subscribe(res=>{console.log(res)})
+
+  //this.test.GetUsers().subscribe(res=>this.userdata=res)
+
+   // this.test.GetUsers().subscribe(res=>this.userdata=res.json())
+    this.test.GetUsers().subscribe(res=>console.log(res))
   }
 }
