@@ -14,22 +14,19 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'app works!';
-  url:string;
-  showUI:boolean
+  url: string;
+  showUI: boolean
   constructor(private router: Router) {
-       this.router.events.pairwise().subscribe((event:any) => {
-           // console.log(event);
-           // console.log(event.length)
-             //console.log (event[event.length-1].url)
-          if(event[event.length-1].url=="/login"){
-            this.showUI=false;
-          }else{
-            this.showUI=true;
-          }
-          
-        });
+    this.router.events.pairwise().subscribe((event: any) => {
+      // console.log(event);
+      // console.log(event.length)
+      //console.log (event[event.length-1].url)
+      if (event[event.length - 1].url == "/login") {
+        this.showUI = false;
+      } else {
+        this.showUI = true;
+      }
 
-        
-    };
-
+    });
+  }
 }
