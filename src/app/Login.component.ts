@@ -7,7 +7,7 @@ import { LoginService } from './services/Login.service'
   selector: 'login',
   template: `
         <h1>{{title}}</h1>
-        <button (click)="login()">Login</button>
+        <button (click)="login()" class="btn btn-success  ">Login</button>
         <div *ngIf="isShow">
         <Loading></Loading>
         </div>
