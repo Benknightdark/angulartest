@@ -13,8 +13,8 @@ NotifyMessageData:Observable<any>  ;
   constructor(private Service:NotifymessagesService) { }
 
   ngOnInit() {
-    this.Service.GetNotifyMessages().subscribe(res=>this.NotifyMessageData=res);
-    //this.NotifyMessageData= this.Service.GetNotifyMessages()
+   // this.Service.GetNotifyMessages().subscribe(res=>this.NotifyMessageData=res);
+    this.NotifyMessageData= this.Service.GetNotifyMessages()
   }
 
 }
