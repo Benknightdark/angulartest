@@ -9,8 +9,10 @@
   <tbody>
     <tr *ngFor="let item of (this.NotifyMessageData|async)" >
       <th scope="row">
-           <span class="glyphicon glyphicon-zoom-in"></span>
-           <span class="glyphicon glyphicon-pencil"></span>
+        <a [routerLink]="['/NotifyMessages/Detail/'+item?.ID]"><span class="glyphicon glyphicon-zoom-in"></span></a>
+        <a [routerLink]="['/NotifyMessages/Edit/'+item?.ID]"><span class="glyphicon glyphicon-pencil"></span></a>
+
+
       </th>
       <td>{{item?.title }}</td>
       <td>{{item?.SendTime }}</td>
