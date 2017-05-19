@@ -33,6 +33,6 @@ export class AppComponent {
   //this.test.GetUsers().subscribe(res=>this.userdata=res)
 
    // this.test.GetUsers().subscribe(res=>this.userdata=res.json())
-      this.userdata=  this.test.GetUsers()
+     // this.userdata=  this.test.GetUsers()
   }
 }
