@@ -20,7 +20,7 @@ private _url="http://192.168.137.1/apiAppMessages"
     return this.http.get(this._url).debounceTime(400).map(res=>res.json());
   }
     GetNotifyMessagesDetail(id:string):Observable<Messages>{
-    return this.http.get(this._url+"/"+id).map(res=>(res.json()));
+    return this.http.get(this._url+"/"+id).map(res=>(res.json()[0]));
 
 }
 }

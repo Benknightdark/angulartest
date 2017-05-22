@@ -29,7 +29,7 @@ export class NotifymessagesreactiveformComponent implements OnInit {
     this.isEdit = this.router.url.indexOf("Detail") > 0 ? true : false;
     this.route.params.subscribe(p => { this.id = p["id"]; console.log(this.id); });
 
-    this.mservice.GetNotifyMessagesDetail(this.id).subscribe(res => this.DetailData = res[0])
+  this.DetailData=  this.mservice.GetNotifyMessagesDetail(this.id)
 
     this.DetailDataForm = this.fb.group({
       title: ["", Validators.compose([Validators.required])],

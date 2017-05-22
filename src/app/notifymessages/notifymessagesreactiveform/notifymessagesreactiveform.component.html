@@ -6,7 +6,7 @@
         class="form-control"
         formControlName="title"
 
-        [ngModel]="(DetailData)?.title"
+        [ngModel]="(DetailData|async)?.title"
         [disabled]="isEdit"
         >
     </div>
@@ -15,7 +15,7 @@
         <input type="text"
         class="form-control"
          formControlName="body"
-          [ngModel]="(DetailData)?.body"
+          [ngModel]="(DetailData|async)?.body"
          [disabled]="isEdit"
         >
     </div>
@@ -24,7 +24,7 @@
         <input type="text"
         class="form-control"
          formControlName="SendTime"
-           [ngModel]="(DetailData)?.SendTime"
+           [ngModel]="(DetailData|async)?.SendTime"
          [disabled]="isEdit"
         >
     </div>
