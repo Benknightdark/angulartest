@@ -1,9 +1,10 @@
 <table class="table table-responsive table-hover">
  <thead>
     <tr>
-      <th>#</th>
+      <th>Template-Form</th>
       <th>標題</th>
       <th>發送時間</th>
+        <th>Reactive-Form</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,10 @@
       </th>
       <td>{{item?.title }}</td>
       <td>{{item?.SendTime }}</td>
+       <th scope="row">
+        <a [routerLink]="['/NotifyMessagesReactiveForms/Detail',item?.ID]"><span class="glyphicon glyphicon-zoom-in"></span></a>
+        <a [routerLink]="['/NotifyMessagesReactiveForms/Edit',item?.ID]"><span class="glyphicon glyphicon-pencil"></span></a>
+      </th>
     </tr>
   </tbody>
 </table>

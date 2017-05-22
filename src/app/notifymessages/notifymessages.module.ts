@@ -15,7 +15,7 @@ import { NotifymessagesreactiveformComponent } from './notifymessagesreactivefor
     NotifyMessagesRouting
   ],
   declarations: [NotifymessagesComponent, NotifymessagesformComponent, NotifymessagesreactiveformComponent],
-  exports:[NotifymessagesComponent,NotifymessagesformComponent],
+  exports:[NotifymessagesComponent,NotifymessagesformComponent,NotifymessagesreactiveformComponent],
   providers:[NotifymessagesService]
 })
 export class NotifymessagesModule { }

@@ -1,6 +1,10 @@
+import {NotifymessagesService} from '../../services/notifymessages.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, Params, ActivatedRoute } from '@angular/router';
 import {Hero} from './hearo'
+import {Messages} from './Messages'
+import {Observable} from 'rxjs'
+
 @Component({
   selector: 'app-notifymessagesform',
   templateUrl: './notifymessagesform.component.html',
@@ -9,7 +13,8 @@ import {Hero} from './hearo'
 export class NotifymessagesformComponent implements OnInit {
   id: string;
   title: string
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  DetailData:Observable<Messages>
+  constructor(private router: Router, private route: ActivatedRoute,private mservice:NotifymessagesService) { }
 
   ngOnInit() {
     this.title =
@@ -19,19 +24,12 @@ export class NotifymessagesformComponent implements OnInit {
             : "";
 
     this.route.params.subscribe(p => { this.id = p["id"]; console.log(this.id); });
+
   }
   onBack() {
     this.router.navigate(['/NotifyMessages']);
   }
- powers = ['Really Smart', 'Super Flexible',
-            'Super Hot', 'Weather Changer'];
-  model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
-  submitted = false;
 
-  newHero() {
-    this.model = new Hero(42, '', '');
-  }
-
-  onSubmit() {this.submitted = true;  }
+  onSubmit() {  }
 
 }
