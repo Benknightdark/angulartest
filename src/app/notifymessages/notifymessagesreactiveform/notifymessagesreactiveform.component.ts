@@ -46,6 +46,6 @@ export class NotifymessagesreactiveformComponent implements OnInit {
     this.router.navigate(['/NotifyMessages']);
   }
 
-  onSubmit() { console.log(this)}
+  onSubmit() { console.log(this.DetailDataForm.value)}
 
 }
