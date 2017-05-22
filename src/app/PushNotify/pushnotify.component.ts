@@ -25,7 +25,7 @@ export class PushNotifyComponent {
       this._userService.CheckDeviceExists(data.uid.value).subscribe(res => {
         this.showForm = res;
 
-        console.log(this.showForm)
+        //console.log(this.showForm)
         if (this.showForm) {
           this.SelectedUser = data.uid.value
           this.SelectedUserName = data.uid.options[data.uid.options.selectedIndex].text;
