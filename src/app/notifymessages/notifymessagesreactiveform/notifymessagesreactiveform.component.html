@@ -6,7 +6,7 @@
         class="form-control"
         formControlName="title"
 
-        [ngModel]="(DetailData|async)?.title"
+        [ngModel]="((DetailData|async)?.title)"
         [disabled]="isEdit"
         >
     </div>

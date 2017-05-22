@@ -23,7 +23,7 @@ export class NotifymessagesformComponent implements OnInit {
           : this.router.url.indexOf("Create") > 0 ? "CreatePage"
             : "";
 
-    this.route.params.subscribe(p => { this.id = p["id"]; console.log(this.id); });
+    this.route.params.subscribe(p => { this.id = p["id"] });
 
   }
   onBack() {
