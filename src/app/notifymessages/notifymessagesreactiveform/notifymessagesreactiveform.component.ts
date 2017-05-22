@@ -27,25 +27,29 @@ export class NotifymessagesreactiveformComponent implements OnInit {
           : this.router.url.indexOf("Create") > 0 ? "CreatePage"
             : "";
     this.isEdit = this.router.url.indexOf("Detail") > 0 ? true : false;
-    this.route.params.subscribe(p => { this.id = p["id"]; console.log(this.id); });
+    this.route.params.subscribe(p => {this.id = p["id"]
+          if(this.id){
+            this.DetailData =this.mservice.GetNotifyMessagesDetail(this.id);
+          }else{
+            this.DetailData=null;
+          }
+      });
 
-  this.DetailData=  this.mservice.GetNotifyMessagesDetail(this.id)
+
 
     this.DetailDataForm = this.fb.group({
       title: ["", Validators.compose([Validators.required])],
       body: ["", Validators.compose([Validators.required])],
       SendTime: ["", Validators.compose([Validators.required])]
     });
-    if(this.isEdit){
-    this.DetailDataForm.disable();
-  }
-  console.log(this.DetailDataForm)
-
+    if (this.isEdit) {
+      this.DetailDataForm.disable();
+    }
   }
   onBack() {
     this.router.navigate(['/NotifyMessages']);
   }
 
-  onSubmit() { console.log(this.DetailDataForm.value)}
+  onSubmit() { console.log(this.DetailDataForm.value) }
 
 }

@@ -9,8 +9,8 @@ export const NotifyMessagesRouting = RouterModule.forChild([
     { path: 'NotifyMessages/Detail/:id', component: NotifymessagesformComponent,canActivate:[AuthGuard] },
     { path: 'NotifyMessages/Edit/:id', component: NotifymessagesformComponent,canActivate:[AuthGuard] },
       { path: 'NotifyMessagesReactiveForms/Detail/:id', component: NotifymessagesreactiveformComponent,canActivate:[AuthGuard] },
-    { path: 'NotifyMessagesReactiveForms/Edit/:id', component: NotifymessagesreactiveformComponent,canActivate:[AuthGuard] }
-
+    { path: 'NotifyMessagesReactiveForms/Edit/:id', component: NotifymessagesreactiveformComponent,canActivate:[AuthGuard] },
+ { path: 'NotifyMessagesReactiveForms/Create', component: NotifymessagesreactiveformComponent,canActivate:[AuthGuard] }
     ]
 
 
