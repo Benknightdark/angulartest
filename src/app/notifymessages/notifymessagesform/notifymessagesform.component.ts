@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Params, ActivatedRoute } from '@angular/router';
+import {Hero} from './hearo'
 @Component({
   selector: 'app-notifymessagesform',
   templateUrl: './notifymessagesform.component.html',
@@ -22,6 +23,15 @@ export class NotifymessagesformComponent implements OnInit {
   onBack() {
     this.router.navigate(['/NotifyMessages']);
   }
-  onSubmit() { }
+ powers = ['Really Smart', 'Super Flexible',
+            'Super Hot', 'Weather Changer'];
+  model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+  submitted = false;
+
+  newHero() {
+    this.model = new Hero(42, '', '');
+  }
+
+  onSubmit() {this.submitted = true;  }
 
 }

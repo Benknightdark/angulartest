@@ -5,6 +5,7 @@ import { NotifyMessagesRouting } from "./notifymessages.route";
 import {ReactiveFormsModule,FormsModule} from '@angular/forms'
 import { NotifymessagesService } from "../services/notifymessages.service";
 import { NotifymessagesformComponent } from './notifymessagesform/notifymessagesform.component';
+import { NotifymessagesreactiveformComponent } from './notifymessagesreactiveform/notifymessagesreactiveform.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -13,7 +14,7 @@ import { NotifymessagesformComponent } from './notifymessagesform/notifymessages
     FormsModule,
     NotifyMessagesRouting
   ],
-  declarations: [NotifymessagesComponent, NotifymessagesformComponent],
+  declarations: [NotifymessagesComponent, NotifymessagesformComponent, NotifymessagesreactiveformComponent],
   exports:[NotifymessagesComponent,NotifymessagesformComponent],
   providers:[NotifymessagesService]
 })
