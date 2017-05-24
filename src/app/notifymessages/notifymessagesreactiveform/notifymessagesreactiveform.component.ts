@@ -27,9 +27,9 @@ export class NotifymessagesreactiveformComponent implements OnInit {
           : this.router.url.indexOf("Create") > 0 ? "CreatePage"
             : "";
     this.isEdit = this.router.url.indexOf("Detail") > 0 ? true : false;
-    this.route.params.subscribe(p => {this.id = p["id"]
-          if(this.id){
-            this.DetailData =this.mservice.GetNotifyMessagesDetail(this.id);
+    this.route.params.subscribe(p => { p["id"]
+          if(p["id"]){
+            this.DetailData =this.mservice.GetNotifyMessagesDetail(p["id"]);
           }else{
             this.DetailData=null;
           }
