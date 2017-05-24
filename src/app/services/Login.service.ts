@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class LoginService {
   public token: string;
-  private _url = "http://172.20.250.81:88"//"http://192.168.137.1:88";
+  private _url = "http://192.168.137.1:88";
   LoginHeaders = new Headers();
   JSONoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json;charset=utf-8' }) });
 
