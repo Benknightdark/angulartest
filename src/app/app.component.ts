@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/pairwise';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise'
-import 'rxjs/add/observable/range'
-import 'rxjs/add/observable/forkJoin';
-import 'rxjs/add/operator/debounceTime'
+import { Observable } from 'rxjs'
+import 'rxjs';
+
 import { Router } from '@angular/router';
 import { TestservicesService } from "./services/testservices.service";
 import { Http } from "@angular/http";
@@ -30,10 +26,20 @@ data:Observable<any>
     });
   }
   ngOnInit() {
-
-    this.data=      this.http.get
+this.data= this.http.get
       ("http://localhost:8099").map
-      (res=>res.json())//.subscribe(a=>console.log(a))
+      (res=>res.json())
+
+Observable.interval(300000).subscribe(val => {
+
+ this.data= this.http.get
+      ("http://localhost:8099").map
+      (res=>res.json())
+      console.log(val)
+
+});
+//output: 0,1,2,3,4,5....
+
   //this.userdata=this.test.GetUsers();//.subscribe(res=>{console.log(res)})
 
   //this.test.GetUsers().subscribe(res=>this.userdata=res)
