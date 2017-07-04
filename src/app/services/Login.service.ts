@@ -15,9 +15,7 @@ export class LoginService {
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
   }
-
   login(data: LoginModel): Observable<boolean> {
-
     return this.http.post("http://172.20.83.80:81/api/token", JSON.stringify(data), this.JSONoptions)
       .map((response: Response) => {
         // login successful if there's a jwt token in the response

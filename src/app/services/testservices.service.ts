@@ -10,11 +10,6 @@ export class TestservicesService {
 
   constructor(private http: Http) { }
   GetUsers(): Observable<any> {
-
-    //return this.http.get("http://192.168.137.1/apiAppUser").map(res=>res.json());
-
     return this.http.get("http://172.20.83.80:81/apiAppUser").map(res => res.json());
-    // return this.http.get("http://192.168.137.1/apiAppUser")
-
   }
 }

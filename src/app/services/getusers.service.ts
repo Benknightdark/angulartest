@@ -23,7 +23,6 @@ export class UserService {
     // return sub;
    return this._http.get(this._url2)
       .map(res => res.json())
-
   }
   CheckDeviceExists(uid): Observable<boolean> {
     return this._http.post(this._url2 + "/CheckDeviceExists", JSON.stringify(uid), this.JSONoptions)
