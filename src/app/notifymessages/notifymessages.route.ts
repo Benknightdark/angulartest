@@ -5,12 +5,12 @@ import { NotifymessagesformComponent } from "./notifymessagesform/notifymessages
 import { NotifymessagesreactiveformComponent } from "./notifymessagesreactiveform/notifymessagesreactiveform.component";
 
 export const NotifyMessagesRouting = RouterModule.forChild([
-    { path: 'NotifyMessages', component: NotifymessagesComponent,canActivate:[AuthGuard] },
-    { path: 'NotifyMessages/Detail/:id', component: NotifymessagesformComponent,canActivate:[AuthGuard] },
-    { path: 'NotifyMessages/Edit/:id', component: NotifymessagesformComponent,canActivate:[AuthGuard] },
-      { path: 'NotifyMessagesReactiveForms/Detail/:id', component: NotifymessagesreactiveformComponent,canActivate:[AuthGuard] },
-    { path: 'NotifyMessagesReactiveForms/Edit/:id', component: NotifymessagesreactiveformComponent,canActivate:[AuthGuard] },
- { path: 'NotifyMessagesReactiveForms/Create', component: NotifymessagesreactiveformComponent,canActivate:[AuthGuard] }
+    { path: 'NotifyMessages', component: NotifymessagesComponent},
+    { path: 'NotifyMessages/Detail/:id', component: NotifymessagesformComponent },
+    { path: 'NotifyMessages/Edit/:id', component: NotifymessagesformComponent },
+      { path: 'NotifyMessagesReactiveForms/Detail/:id', component: NotifymessagesreactiveformComponent },
+    { path: 'NotifyMessagesReactiveForms/Edit/:id', component: NotifymessagesreactiveformComponent},
+ { path: 'NotifyMessagesReactiveForms/Create', component: NotifymessagesreactiveformComponent }
     ]
 
 

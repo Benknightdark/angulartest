@@ -11,16 +11,19 @@ import 'rxjs/add/operator/debounceTime'*/
 import 'rxjs'
 @Injectable()
 export class UserService {
-  private _url = "http://192.168.137.1/apiPush/";
-  private _url2 = "http://192.168.137.1/apiAppUser/";
+  private _url = "http://172.20.83.80/apiPush/";
+  private _url2 = "http://172.20.83.80/apiAppUser/";
   JSONoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json;charset=utf-8' }) });
   UrlEncodedoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' }) });
   constructor(private _http: Http) {}
-  getUsers(): Observable<users> {
-    let sub = new Subject();
-    this._http.get(this._url2)
-      .map(res => res.json()).subscribe(sub)
-    return sub;
+  getUsers() {//: Observable<users>
+    // let sub = new Subject();
+    // this._http.get(this._url2)
+    //   .map(res => res.json()).subscribe(sub)
+    // return sub;
+   return this._http.get(this._url2)
+      .map(res => res.json())
+
   }
   CheckDeviceExists(uid): Observable<boolean> {
     return this._http.post(this._url2 + "CheckDeviceExists", JSON.stringify(uid), this.JSONoptions)

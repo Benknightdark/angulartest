@@ -13,7 +13,7 @@ export class TestservicesService {
 
     //return this.http.get("http://192.168.137.1/apiAppUser").map(res=>res.json());
 
-    return this.http.get("http://192.168.137.1/apiAppUser").map(res => res.json());
+    return this.http.get("http://172.20.83.80/apiAppUser").map(res => res.json());
     // return this.http.get("http://192.168.137.1/apiAppUser")
 
   }

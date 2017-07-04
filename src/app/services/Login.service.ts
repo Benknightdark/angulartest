@@ -18,7 +18,7 @@ export class LoginService {
 
   login(data: LoginModel): Observable<boolean> {
 
-    return this.http.post("http://192.168.137.1:88/api/token", JSON.stringify(data), this.JSONoptions)
+    return this.http.post("http://172.20.83.80/api/token", JSON.stringify(data), this.JSONoptions)
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         let token = response.json() && response.json().token;
@@ -41,7 +41,7 @@ export class LoginService {
   ///測試jwt登入
   TestService() {
     this.LoginHeaders.append('Authorization', 'Bearer ' + JSON.parse(localStorage.getItem("currentUser")).token);
-    return this.http.get("http://192.168.137.1:88/api/token", { "headers": this.LoginHeaders }).map(res => res.json());
+    return this.http.get("http://172.20.83.80/api/token", { "headers": this.LoginHeaders }).map(res => res.json());
 
   }
 
