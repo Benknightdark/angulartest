@@ -26,18 +26,18 @@ data:Observable<any>
     });
   }
   ngOnInit() {
-this.data= this.http.get
-      ("http://localhost:8099").map
-      (res=>res.json())
+// this.data= this.http.get
+//       ("http://localhost:8099").map
+//       (res=>res.json())
 
-Observable.interval(300000).subscribe(val => {
+// Observable.interval(300000).subscribe(val => {
 
- this.data= this.http.get
-      ("http://localhost:8099").map
-      (res=>res.json())
-      console.log(val)
+//  this.data= this.http.get
+//       ("http://localhost:8099").map
+//       (res=>res.json())
+//       console.log(val)
 
-});
+// });
 //output: 0,1,2,3,4,5....
 
   //this.userdata=this.test.GetUsers();//.subscribe(res=>{console.log(res)})
