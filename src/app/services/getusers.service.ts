@@ -11,8 +11,8 @@ import 'rxjs/add/operator/debounceTime'*/
 import 'rxjs'
 @Injectable()
 export class UserService {
-  private _url = "http://172.20.83.80:81/apiPush";
-  private _url2 = "http://172.20.83.80:81/apiAppUser";
+  private _url = "http://172.20.83.80/apiPush";
+  private _url2 = "http://172.20.83.80/apiAppUser";
   JSONoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json;charset=utf-8' }) });
   UrlEncodedoptions = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' }) });
   constructor(private _http: Http) {}

@@ -13,7 +13,7 @@ interface Messages {
 
 @Injectable()
 export class NotifymessagesService {
-private _url="http://172.20.83.80:81/apiAppMessages"
+private _url="http://172.20.83.80/apiAppMessages"
   constructor(private http:Http) { }
   GetNotifyMessages():Observable<any>{
     return this.http.get(this._url).debounceTime(400).map(res=>res.json()).share();
